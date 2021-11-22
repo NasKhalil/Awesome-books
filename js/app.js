@@ -8,7 +8,7 @@ let booksArray = [];
 const data = localStorage.getItem('booksList');
 if (data === null) {
   booksArray = [];
-}else {
+} else {
   booksArray = JSON.parse(data);
 }
 
@@ -28,8 +28,8 @@ function displayBooks() {
 displayBooks();
 function addBook(title, author) {
   booksArray.push({
-  title,
-  author,
+    title,
+    author,
   });
 
   localStorage.booksList = JSON.stringify(booksArray);
@@ -56,4 +56,4 @@ function removeBook(index) {
 window.addEventListener('load', () => {
   displayBooks();
   removeBook(id);
-})
+});
