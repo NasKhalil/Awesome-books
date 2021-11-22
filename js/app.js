@@ -28,14 +28,14 @@ displayBooks();
 
 function addBook(title, author) {
   const data = localStorage.booksList;
-  if (data === null){
+  if (data === null) {
     booksArray = [];
   } else {
-    booksArray = JSON.parse(data)
+    booksArray = JSON.parse(data);
   }
   booksArray.push({
-    title: title,
-    author: author
+    title,
+    author,
   });
 
   localStorage.booksList = JSON.stringify(booksArray);
@@ -49,7 +49,7 @@ addBtn.addEventListener('submit', (e) => {
   const authorInput = bookAuthor.value;
 
   addBook(titleInput, authorInput);
-})
+});
 
 function removeBook(index) {
   const data = localStorage.booksList;
