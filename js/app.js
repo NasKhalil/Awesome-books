@@ -1,3 +1,4 @@
+const id = null;
 const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
 const books = document.querySelector('#books-list');
@@ -51,3 +52,8 @@ function removeBook(index) {
   localStorage.setItem('booksList', JSON.stringify(booksArray));
   displayBooks();
 }
+
+window.addEventListener('load', () => {
+  displayBooks();
+  removeBook(id);
+})
