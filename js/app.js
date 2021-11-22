@@ -58,3 +58,7 @@ function removeBook(index) {
   localStorage.booksList = JSON.stringify(booksArray);
   displayBooks();
 }
+
+window.addEventListener('load', ()=> {
+    removeBook(index)
+})
