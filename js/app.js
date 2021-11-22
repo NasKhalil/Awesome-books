@@ -59,6 +59,6 @@ function removeBook(index) {
   displayBooks();
 }
 
-window.addEventListener('load', ()=> {
-    removeBook(index)
-})
+window.addEventListener('load', () => {
+  removeBook(index);
+});
