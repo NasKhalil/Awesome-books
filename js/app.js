@@ -19,6 +19,7 @@ function displayBooks() {
     <h2>${item.title}</h2>
     <p>${item.author}</p>
     <button onclick='removeBook(${index})' id='remove-btn'>remove</button>
+    <hr>
     </div>`;
   });
   books.innerHTML = htmlCode;
