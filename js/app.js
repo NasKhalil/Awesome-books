@@ -48,6 +48,6 @@ function removeBook(index) {
   const data = localStorage.booksList;
   booksArray = JSON.parse(data);
   booksArray.splice(index, 1);
-  localStorage.booksList = JSON.stringify(booksArray);
+  localStorage.setItem('booksList', JSON.stringify(booksArray));
   displayBooks();
 }
