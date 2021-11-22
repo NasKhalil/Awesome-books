@@ -1,23 +1,37 @@
 const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
-const books = document.getElementsByClassName('books-list');
+const books = document.querySelector('#books-list');
 const addBtn = document.getElementById('form');
+const data = JSON.stringify(localStorage.booksArray);
 
-let booksArray = [
+const booksArray = [
     {
         title: 'this is the book title',
-        author: 'Adigun oni'
+        author: 'Adigun oni',
     },
 ];
 
+function displayBooks () {
+    let htmlCode = "";
+    booksArray.forEach((item) => {
+    htmlCode += `<div>
+          <h2>${item.title}</h2>
+          <p>${item.author}</p>
+          <button>delete</button>
+      </div>`
+    });
+    books.innerHTML = htmlCode;
+}
 
-
+displayBooks();
 
 function addBook(title, author) {
     booksArray.push({
         title: title,
         author: author
     })
+
+    displayBooks();
 }
 
 addBtn.addEventListener('submit', (e) => {
@@ -31,17 +45,4 @@ addBtn.addEventListener('submit', (e) => {
     console.log(booksArray)
 })
 
-function displayBooks() {
-    let htmlContent ="";
-  booksArray.forEach((item) => {
-    htmlContent += `
-    <div>
-        <h2>${item.title}</h2>
-        <p>${item.author}</p>
-        <button>delete</button>
-    </div>
-    `
-  })
 
-  books.innerHTML = htmlContent;
-}
