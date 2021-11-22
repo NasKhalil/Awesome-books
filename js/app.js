@@ -2,17 +2,18 @@ const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
 const books = document.querySelector('#books-list');
 const addBtn = document.getElementById('form');
-const data = JSON.stringify(localStorage.booksArray);
-const removeBtn = document.getElementById('remove-btn');
 
-const booksArray = [
-    {
-        title: 'this is the book title',
-        author: 'Adigun oni',
-    },
-];
+let booksArray ;
 
 function displayBooks () {
+    let data = localStorage.booksList;
+    if (data === null){
+        booksArray = [];
+    } else {
+        booksArray = JSON.parse(data)
+    }
+
+    console.log(booksArray)
     let htmlCode = "";
     booksArray.forEach((item,index) => {
     htmlCode += `<div>
@@ -27,11 +28,20 @@ function displayBooks () {
 displayBooks();
 
 function addBook(title, author) {
+
+    let data = localStorage.booksList;
+    if (data === null){
+        booksArray = [];
+    } else {
+        booksArray = JSON.parse(data)
+    }
+
     booksArray.push({
         title: title,
         author: author
     })
-
+   
+    localStorage.booksList = JSON.stringify(booksArray);
     displayBooks();
 }
 
@@ -42,8 +52,6 @@ addBtn.addEventListener('submit', (e) => {
     const authorInput = bookAuthor.value;
 
     addBook(titleInput, authorInput);
-
-    console.log(booksArray)
 })
 
 function removeBook (index) {
@@ -51,10 +59,3 @@ function removeBook (index) {
    console.log(booksArray);
    displayBooks();
 }
-
-
-// removeBtn.addEventListener('click', (e)=>{
-//      booksArray.shift();
-// }) 
-
-
