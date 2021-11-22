@@ -2,7 +2,7 @@ const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
 const books = document.querySelector('#books-list');
 const addBtn = document.getElementById('form');
-
+const rmvBtn = document.getElementById('remove-btn');
 let booksArray;
 
 function displayBooks() {
@@ -60,6 +60,11 @@ function removeBook(index) {
   displayBooks();
 }
 
-window.onload = () => {
-  removeBook;
-}
+rmvBtn.addEventListener('click', (id) => {
+  removeBook(id)
+})
+
+
+// window.onload = () => {
+//   removeBook(id);
+// };
