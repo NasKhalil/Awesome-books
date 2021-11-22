@@ -61,10 +61,5 @@ function removeBook(index) {
 }
 
 rmvBtn.addEventListener('click', (id) => {
-  removeBook(id)
-})
-
-
-// window.onload = () => {
-//   removeBook(id);
-// };
+  removeBook(id);
+});
