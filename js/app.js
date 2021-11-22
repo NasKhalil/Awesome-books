@@ -6,56 +6,56 @@ const addBtn = document.getElementById('form');
 let booksArray ;
 
 function displayBooks () {
-    let data = localStorage.booksList;
-    if (data === null){
-        booksArray = [];
+  let data = localStorage.booksList;
+  if (data === null){
+    booksArray = [];
     } else {
         booksArray = JSON.parse(data)
     }
 
-    console.log(booksArray)
-    let htmlCode = "";
-    booksArray.forEach((item,index) => {
+  let htmlCode = "";
+  booksArray.forEach((item,index) => {
     htmlCode += `<div>
-          <h2>${item.title}</h2>
-          <p>${item.author}</p>
-          <button onclick='removeBook(${index})' id='remove-btn'>remove</button>
-      </div>`;
-    });
-    books.innerHTML = htmlCode;
+    <h2>${item.title}</h2>
+    <p>${item.author}</p>
+    <button onclick='removeBook(${index})' id='remove-btn'>remove</button>
+    </div>`;
+  });
+  books.innerHTML = htmlCode;
 }
 
 displayBooks();
 
 function addBook(title, author) {
 
-    let data = localStorage.booksList;
-    if (data === null){
-        booksArray = [];
-    } else {
-        booksArray = JSON.parse(data)
-    }
-
-    booksArray.push({
-        title: title,
-        author: author
-    })
+  let data = localStorage.booksList;
+  if (data === null){
+    booksArray = [];
+  } else {
+    booksArray = JSON.parse(data)
+  }
+  booksArray.push({
+    title: title,
+    author: author
+  })
    
-    localStorage.booksList = JSON.stringify(booksArray);
-    displayBooks();
+  localStorage.booksList = JSON.stringify(booksArray);
+  displayBooks();
 }
 
 addBtn.addEventListener('submit', (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const titleInput = bookTitle.value;
-    const authorInput = bookAuthor.value;
+  const titleInput = bookTitle.value;
+  const authorInput = bookAuthor.value;
 
-    addBook(titleInput, authorInput);
+  addBook(titleInput, authorInput);
 })
 
 function removeBook (index) {
-   booksArray.splice(index, 1);
-   console.log(booksArray);
-   displayBooks();
+  let data = localStorage.booksList;
+  booksArray = JSON.parse(data)
+  booksArray.splice(index, 1);
+  localStorage.booksList = JSON.stringify(booksArray);
+  displayBooks();
 }
