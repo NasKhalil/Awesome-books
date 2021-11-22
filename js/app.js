@@ -3,6 +3,7 @@ const bookAuthor = document.getElementById('author');
 const books = document.querySelector('#books-list');
 const addBtn = document.getElementById('form');
 const data = JSON.stringify(localStorage.booksArray);
+const removeBtn = document.getElementById('remove-btn');
 
 const booksArray = [
     {
@@ -13,12 +14,12 @@ const booksArray = [
 
 function displayBooks () {
     let htmlCode = "";
-    booksArray.forEach((item) => {
+    booksArray.forEach((item,index) => {
     htmlCode += `<div>
           <h2>${item.title}</h2>
           <p>${item.author}</p>
-          <button>delete</button>
-      </div>`
+          <button onclick='removeBook(${index})' id='remove-btn'>remove</button>
+      </div>`;
     });
     books.innerHTML = htmlCode;
 }
@@ -44,5 +45,16 @@ addBtn.addEventListener('submit', (e) => {
 
     console.log(booksArray)
 })
+
+function removeBook (index) {
+   booksArray.splice(index, 1);
+   console.log(booksArray);
+   displayBooks();
+}
+
+
+// removeBtn.addEventListener('click', (e)=>{
+//      booksArray.shift();
+// }) 
 
 
