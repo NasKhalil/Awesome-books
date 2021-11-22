@@ -2,17 +2,16 @@ const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
 const books = document.querySelector('#books-list');
 const addBtn = document.getElementById('form');
-const rmvBtn = document.getElementById('remove-btn');
-let booksArray;
+let booksArray = [];
 
-function displayBooks() {
-  const data = localStorage.booksList;
+let data = localStorage.getItem('booksList');
   if (data === null) {
     booksArray = [];
-  } else {
+  }else {
     booksArray = JSON.parse(data);
   }
 
+function displayBooks() {
   let htmlCode = '';
   booksArray.forEach((item, index) => {
     htmlCode += `<div>
@@ -28,12 +27,7 @@ function displayBooks() {
 displayBooks();
 
 function addBook(title, author) {
-  const data = localStorage.booksList;
-  if (data === null) {
-    booksArray = [];
-  } else {
-    booksArray = JSON.parse(data);
-  }
+  
   booksArray.push({
     title,
     author,
@@ -59,7 +53,3 @@ function removeBook(index) {
   localStorage.booksList = JSON.stringify(booksArray);
   displayBooks();
 }
-
-rmvBtn.addEventListener('click', (id) => {
-  removeBook(id);
-});
