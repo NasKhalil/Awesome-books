@@ -4,12 +4,12 @@ const books = document.querySelector('#books-list');
 const addBtn = document.getElementById('form');
 let booksArray = [];
 
-let data = localStorage.getItem('booksList');
-  if (data === null) {
-    booksArray = [];
-  }else {
-    booksArray = JSON.parse(data);
-  }
+const data = localStorage.getItem('booksList');
+if (data === null) {
+  booksArray = [];
+}else {
+  booksArray = JSON.parse(data);
+}
 
 function displayBooks() {
   let htmlCode = '';
@@ -25,12 +25,10 @@ function displayBooks() {
 }
 
 displayBooks();
-
 function addBook(title, author) {
-  
   booksArray.push({
-    title,
-    author,
+  title,
+  author,
   });
 
   localStorage.booksList = JSON.stringify(booksArray);
