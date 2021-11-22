@@ -3,18 +3,18 @@ const bookAuthor = document.getElementById('author');
 const books = document.querySelector('#books-list');
 const addBtn = document.getElementById('form');
 
-let booksArray ;
+let booksArray;
 
-function displayBooks () {
-  let data = localStorage.booksList;
-  if (data === null){
+function displayBooks() {
+  const data = localStorage.booksList;
+  if (data === null) {
     booksArray = [];
-    } else {
-        booksArray = JSON.parse(data)
-    }
+  } else {
+    booksArray = JSON.parse(data);
+  }
 
-  let htmlCode = "";
-  booksArray.forEach((item,index) => {
+  let htmlCode = '';
+  booksArray.forEach((item, index) => {
     htmlCode += `<div>
     <h2>${item.title}</h2>
     <p>${item.author}</p>
@@ -27,8 +27,7 @@ function displayBooks () {
 displayBooks();
 
 function addBook(title, author) {
-
-  let data = localStorage.booksList;
+  const data = localStorage.booksList;
   if (data === null){
     booksArray = [];
   } else {
@@ -37,8 +36,8 @@ function addBook(title, author) {
   booksArray.push({
     title: title,
     author: author
-  })
-   
+  });
+
   localStorage.booksList = JSON.stringify(booksArray);
   displayBooks();
 }
@@ -52,9 +51,9 @@ addBtn.addEventListener('submit', (e) => {
   addBook(titleInput, authorInput);
 })
 
-function removeBook (index) {
-  let data = localStorage.booksList;
-  booksArray = JSON.parse(data)
+function removeBook(index) {
+  const data = localStorage.booksList;
+  booksArray = JSON.parse(data);
   booksArray.splice(index, 1);
   localStorage.booksList = JSON.stringify(booksArray);
   displayBooks();
