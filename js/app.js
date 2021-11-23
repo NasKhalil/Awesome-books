@@ -23,7 +23,7 @@ class Books {
     } else {
       getData = JSON.parse(getData);
     }
-    let htmlCode = "";
+    let htmlCode = '';
     getData.forEach((item) => {
       htmlCode += `<div>
       <h2>${item.title}</h2>
@@ -36,28 +36,28 @@ class Books {
   }
 
   static addBook(book) {
-  this.data = localStorage.getItem('booksList')
-  let getData = this.data;
-  if (getData === null) {
-    getData = [];
-  } else {
-    getData = JSON.parse(getData);
-  }
-  this.data = getData.concat(book)
-  localStorage.setItem('booksList', JSON.stringify(this.data)) ;
-  Books.displayBooks();
+    this.data = localStorage.getItem('booksList');
+    let getData = this.data;
+    if (getData === null) {
+      getData = [];
+    } else {
+      getData = JSON.parse(getData);
+    }
+    this.data = getData.concat(book);
+    localStorage.setItem('booksList', JSON.stringify(this.data)) ;
+    Books.displayBooks();
 }
 
- static removeBook(id) {
-  const data = localStorage.getItem('booksList');
-  this.data = JSON.parse(data);
-  this.data = this.data.filter((bookObj) => bookObj.id !== id);
-  localStorage.setItem("booksList", JSON.stringify(this.data));
-  Books.displayBooks();
+  static removeBook(id) {
+    const data = localStorage.getItem('booksList');
+    this.data = JSON.parse(data);
+    this.data = this.data.filter((bookObj) => bookObj.id !== id);
+    localStorage.setItem('booksList', JSON.stringify(this.data));
+    Books.displayBooks();
   }
 } 
 
-addBtn.addEventListener("submit", (e) => {
+addBtn.addEventListener('submit', (e) => {
   e.preventDefault();
   const titleInput = bookTitle.value;
   const authorInput = bookAuthor.value;
@@ -65,6 +65,6 @@ addBtn.addEventListener("submit", (e) => {
   Books.addBook(book);
 });
 
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
   Books.displayBooks();
 });
