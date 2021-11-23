@@ -1,14 +1,13 @@
 const id = null;
-const bookTitle = document.getElementById('title');
-const bookAuthor = document.getElementById('author');
-const books = document.querySelector('#books-list');
-const addBtn = document.getElementById('form');
-let booksArray = [];
+const bookTitle = document.getElementById("title");
+const bookAuthor = document.getElementById("author");
+const books = document.querySelector("#books-list");
+const addBtn = document.getElementById("form");
 
 class Book {
   constructor(title, author) {
-    const data = localStorage.getItem('booksList');
-    if (data === null) {
+    this.booksArray = localStorage.getItem("booksList");
+    if (this.booksArray === null) {
       booksArray = [];
     } else {
       booksArray = JSON.parse(data);
@@ -18,7 +17,7 @@ class Book {
   }
 
   static displayBooks() {
-    let htmlCode = '';
+    let htmlCode = "";
     booksArray.forEach((item, index) => {
       htmlCode += `<div>
       <h2>${item.title}</h2>
@@ -35,7 +34,7 @@ class Book {
       title,
       author,
     });
-  
+
     localStorage.booksList = JSON.stringify(booksArray);
     Book.displayBooks();
   }
@@ -44,12 +43,12 @@ class Book {
     const data = localStorage.booksList;
     booksArray = JSON.parse(data);
     booksArray.splice(index, 1);
-    localStorage.setItem('booksList', JSON.stringify(booksArray));
+    localStorage.setItem("booksList", JSON.stringify(booksArray));
     Book.displayBooks();
   }
-};
+}
 
-addBtn.addEventListener('submit', (e) => {
+addBtn.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const titleInput = bookTitle.value;
@@ -58,8 +57,6 @@ addBtn.addEventListener('submit', (e) => {
   Book.addBook(titleInput, authorInput);
 });
 
-
-window.addEventListener('load', () => {
+window.addEventListener("load", () => {
   Book.displayBooks();
-  Book.removeBook(id);
 });
