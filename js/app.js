@@ -44,9 +44,9 @@ class Books {
       getData = JSON.parse(getData);
     }
     this.data = getData.concat(book);
-    localStorage.setItem('booksList', JSON.stringify(this.data)) ;
+    localStorage.setItem('booksList', JSON.stringify(this.data));
     Books.displayBooks();
-}
+  }
 
   static removeBook(id) {
     const data = localStorage.getItem('booksList');
@@ -55,7 +55,7 @@ class Books {
     localStorage.setItem('booksList', JSON.stringify(this.data));
     Books.displayBooks();
   }
-} 
+}
 
 addBtn.addEventListener('submit', (e) => {
   e.preventDefault();
