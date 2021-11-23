@@ -35,7 +35,7 @@ class Book {
       title,
       author,
     });
-  
+
     localStorage.booksList = JSON.stringify(booksArray);
     Book.displayBooks();
   }
@@ -47,7 +47,7 @@ class Book {
     localStorage.setItem('booksList', JSON.stringify(booksArray));
     Book.displayBooks();
   }
-};
+}
 
 addBtn.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -57,7 +57,6 @@ addBtn.addEventListener('submit', (e) => {
 
   Book.addBook(titleInput, authorInput);
 });
-
 
 window.addEventListener('load', () => {
   Book.displayBooks();
