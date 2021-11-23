@@ -1,3 +1,5 @@
+/* eslint-disable max-classes-per-file */
+
 const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
 const books = document.querySelector('#books-list');
