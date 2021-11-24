@@ -1,3 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 20px;
+}
+
+.project-title {
+  align-self: center;
+  text-align: center;
+  margin: 10px;
+}
+
+
+#form {
+  margin: 10px;
+  padding: 10px;
+  align-items: center;
+}
+
+#title, #author {
+  width: 60%;
+  margin: 2%;
+  padding: 5px;
+}
+.add-btn {
+  margin: 10px;
+  padding: 3px;
 }
