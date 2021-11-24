@@ -5,9 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.1/build/global/luxon.min.js"></script>
     <title>Awesome books</title>
   </head>
   <body>
+    <nav class="nav-bar">
+      <a href="#">Awesome Book</a>
+      <ul>
+        <li><a id="heading-id">List</a></li>
+        <li><a id="add-id" >Add new</a></li>
+        <li><a id="contact-id">Contact</a></li>
+      </ul>
+    </nav>
+    <h4 class="current-time"></h4>
     <section id="section-heading">
       <div class="heading">
         <h2 class="project-title">All Awesome books</h2>
@@ -22,7 +32,22 @@
         <button class="add-btn" type="submit">Add</button>
       </form>
     </section>
+    <section id="contact">
+      <h2>Contact information</h2>
+      <p>Do you have any questions or you just want to say "Hello"?</p>
+      <ul>
+        <li>Our e-mail: africadev@mail.com</li>
+        <li>Our phone number: 001122334455</li>
+        <li>Our address: The moon</li>
+      </ul>
+    </section>
+
+    <footer>
+      Copyright © AFRICADev 2021
+    </footer>
 
     <script src="./js/app.js"></script>
+    <script src="./js/navigation.js"></script>
+    
   </body>
 </html>
