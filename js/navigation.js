@@ -1,7 +1,7 @@
 const DateTime = luxon.DateTime;
 const date = document.querySelector('.current-time');
 
-date.innerHTML = DateTime.now().toFormat("MMMM dd yyyy, tt a");
+date.innerHTML = DateTime.now().toFormat('MMMM dd yyyy, tt a');
 
 const heading = document.getElementById('section-heading');
 const add = document.getElementById('section-add');
@@ -21,4 +21,10 @@ btnAdd.addEventListener('click', () => {
     add.style.display = 'block';
     contact.style.display = 'none';
 })
+
+contactBtn.addEventListener('click', () => {
+  heading.style.display = 'none';
+  add.style.display = 'none';
+  contact.style.display = 'block';
+});
 

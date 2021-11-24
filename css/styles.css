@@ -134,12 +134,14 @@ body {
   background-color: rgb(51, 49, 49, 0.3);
   width: 60%;
   padding: 32px;
+  color: #fff;
 }
 
 #section-heading {
   background-color: rgb(51, 49, 49, 0.3);
   width: 60%;
   padding: 24px;
+  color: #fff;
 }
 
 #contact {
