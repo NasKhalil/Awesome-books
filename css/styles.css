@@ -10,7 +10,7 @@ body {
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
   margin: 20px;
-  background: linear-gradient(45deg, #f17c58, #e94584, #24aadb , #27dbb1, #ffdc18, #ff3706);
+  background: linear-gradient(45deg, #f17c58, #e94584, #24aadb, #27dbb1, #ffdc18, #ff3706);
   background-size: 600% 100%;
   background-repeat: no-repeat;
   animation: gradient 16s linear infinite;
@@ -38,7 +38,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 #title,
@@ -71,7 +70,7 @@ body {
 .book-item {
   display: flex;
   align-items: center;
-  gap:6px;
+  gap: 6px;
   color: #fff;
 }
 
