@@ -140,10 +140,25 @@ body {
   background-color: rgb(51, 49, 49, 0.3);
   width: 60%;
   padding: 24px;
+  display: none;
 }
 
 #contact {
-  
+  background-color: rgb(51, 49, 49, 0.3);
+  width: 60%;
+  color: #fff;
+  margin: 10px;
+  padding: 60px; 
+}
+
+#contact h2, p{
+  text-align: center;
+  padding: 24px;
+}
+
+#contact ul {
+  padding: 16px;
+  margin-left: 150px;
 }
 
 footer {
