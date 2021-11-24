@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +7,22 @@
 }
 
 body {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
   margin: 20px;
+  background: linear-gradient(45deg,#F17C58, #E94584, #24AADB , #27DBB1,#FFDC18, #FF3706);
+  background-size: 600% 100%;
+  background-repeat: no-repeat;
+  animation: gradient 16s linear infinite;
+  animation-direction: alternate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes gradient {
+  0% {background-position: 0%}
+  100% {background-position: 100%}
 }
 
 .project-title {
@@ -14,19 +31,77 @@ body {
   margin: 10px;
 }
 
-
 #form {
   margin: 10px;
   padding: 10px;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#title, #author {
-  width: 60%;
+#title,
+#author {
+  width: 90%;
+  height: 46px;
   margin: 2%;
-  padding: 5px;
+  padding: 5px 16px;
+  border-radius: 8px;
+  border: none;
 }
 .add-btn {
   margin: 10px;
   padding: 3px;
+}
+
+#books-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-container {
+  border: black solid 2px;
+  border-radius: 8px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  margin: 8px;
+}
+
+.book-item {
+  display: flex;
+  align-items: center;
+  gap:6px;
+  color: #fff;
+}
+
+#remove-btn {
+  background-color: red;
+  color: #fff;
+  padding: 8px;
+  box-shadow: 5px 5px;
+  border: none;
+}
+
+.add-btn {
+  padding: 8px;
+  background-color: royalblue;
+  color: #fff;
+  border: none;
+}
+
+#section-add {
+  background-color: rgb(51, 49, 49, 0.3);
+  width: 60%;
+  padding: 32px;
+}
+
+#section-heading {
+  background-color: rgb(51, 49, 49, 0.3);
+  width: 60%;
+  padding: 24px;
 }

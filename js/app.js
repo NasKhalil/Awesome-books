@@ -27,11 +27,13 @@ class Books {
     }
     let htmlCode = '';
     getData.forEach((item) => {
-      htmlCode += `<div>
+      htmlCode += `<div class="book-container">
+      <div class="book-item">
       <h2>${item.title}</h2>
+      <span>by</span>
       <p>${item.author}</p>
+      </div>
       <button onclick='Books.removeBook(${item.id})' id='remove-btn'>remove</button>
-      <hr>
       </div>`;
     });
     books.innerHTML = htmlCode;
