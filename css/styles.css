@@ -150,10 +150,11 @@ body {
   width: 60%;
   color: #fff;
   margin: 10px;
-  padding: 60px; 
+  padding: 60px;
 }
 
-#contact h2, p{
+#contact h2,
+p {
   text-align: center;
   padding: 24px;
 }

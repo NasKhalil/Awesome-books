@@ -1,4 +1,5 @@
-const DateTime = luxon.DateTime;
+import luxon from './luxon';
+var DateTime = luxon.DateTime;
 const date = document.querySelector('.current-time');
 
 date.innerHTML = DateTime.now().toFormat('MMMM dd yyyy, tt a');
@@ -11,20 +12,19 @@ const btnAdd = document.getElementById('add-id');
 const contactBtn = document.getElementById('contact-id');
 
 headingBtn.addEventListener('click', () => {
-    heading.style.display = 'block';
-    add.style.display = 'none';
-    contact.style.display = 'none';
-})
+  heading.style.display = 'block';
+  add.style.display = 'none';
+  contact.style.display = 'none';
+});
 
 btnAdd.addEventListener('click', () => {
-    heading.style.display = 'none';
-    add.style.display = 'block';
-    contact.style.display = 'none';
-})
+  heading.style.display = 'none';
+  add.style.display = 'block';
+  contact.style.display = 'none';
+});
 
 contactBtn.addEventListener('click', () => {
   heading.style.display = 'none';
   add.style.display = 'none';
   contact.style.display = 'block';
 });
-
