@@ -9,7 +9,6 @@
 body {
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
-  margin: 20px;
   background: linear-gradient(45deg, #f17c58, #e94584, #24aadb, #27dbb1, #ffdc18, #ff3706);
   background-size: 600% 100%;
   background-repeat: no-repeat;
@@ -23,6 +22,36 @@ body {
 @keyframes gradient {
   0% { background-position: 0%; }
   100% { background-position: 100%; }
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 20px;
+  padding: 10px;
+  background-color: rgb(51, 49, 49, 0.3);
+}
+
+.nav-bar ul {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.current-time {
+  width: 100%;
+  text-align: right;
+  margin: 10px;
+  padding-right: 15px;
 }
 
 .project-title {
@@ -110,4 +139,16 @@ body {
   background-color: rgb(51, 49, 49, 0.3);
   width: 60%;
   padding: 24px;
+}
+
+footer {
+  background-color: rgb(51, 49, 49, 0.3);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  color: #fff;
 }
