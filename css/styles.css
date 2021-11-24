@@ -130,6 +130,7 @@ body {
 }
 
 #section-add {
+  display: none;
   background-color: rgb(51, 49, 49, 0.3);
   width: 60%;
   padding: 32px;
@@ -139,6 +140,10 @@ body {
   background-color: rgb(51, 49, 49, 0.3);
   width: 60%;
   padding: 24px;
+}
+
+#contact {
+  
 }
 
 footer {
