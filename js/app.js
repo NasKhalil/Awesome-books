@@ -67,6 +67,8 @@ addBtn.addEventListener('submit', (e) => {
   const authorInput = bookAuthor.value;
   const book = new Book(titleInput, authorInput);
   Books.addBook(book);
+  bookAuthor.value = '';
+  bookTitle.value = '';
 });
 
 window.addEventListener('load', () => {
