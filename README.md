@@ -28,11 +28,11 @@ To get a local copy up and running follow these simple example steps.
 
 
 ### Prerequisites
--Html
--CSS
--JAVASCRIPT
--Git
--Github
+- Html
+- CSS
+- Javascript
+- Git
+- Github
 
 ### Setup
 -None
